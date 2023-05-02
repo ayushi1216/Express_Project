@@ -3,7 +3,8 @@ const cityName = document.getElementById('cityName');
 const city_name = document.getElementById('city_name');
 const temp = document.getElementById('temp')
 const temp_status = document.getElementById('temp_status')
-
+const today_day = document.getElementById('today_day');
+const today_date = document.getElementById('today_date');
 
 // event.preventDefault prevents page from reloading
 
@@ -53,21 +54,25 @@ const getInfo = async(event) => {
         catch{
             city_name.innerText = "Plz enter the city name Properly. "
         }
-
-
     }
-
-
-
 }
 
+
+// To get current date and day on App
 
 const current_date = new Date();
 
 let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+let mS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
 const day = weekdays[current_date.getDay()];
-console.log(day)
+
+const date = `${current_date.getDate()} ${mS[current_date.getMonth()]} ${current_date.getFullYear()} `;
+
+
+today_day.innerText = day;
+today_date.innerText = date;
+
 
 
 
